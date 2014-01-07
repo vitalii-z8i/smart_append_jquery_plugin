@@ -170,10 +170,11 @@
 
     var tag = currentList.prop("tagName").toLowerCase();
     var main_tag_attributes = {};
-    var supportedTags = ['ul', 'ol', 'dl'];
+    var supportedTags = ['ul', 'ol', 'dl', 'div'];
     var tagsDependencies = {'ul': 'li',
                             'ol': 'li',
-                            'dl': 'dt'}
+                            'dl': 'dt',
+                            'div': 'div'}
                             // 'table': 'tr'}
 
     if (currentList.length > 1) {

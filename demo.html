@@ -7,6 +7,11 @@
       .hidden {
         display: none;
       }
+      .fixture-child {
+        width: 300px;
+        height: 100px;
+        background-color: grey;
+      }
     </style>
     <script type="text/javascript">
       json_doc = {"widgets": [
@@ -54,6 +59,18 @@
                 },
                 'after': "lalalasomeothertext"
               },
+            }
+          );
+
+          $("#fixtures").smartAppend(
+            json_doc['widgets'],
+            {
+              'value': 'node:image/name',
+              'attributes': { 'class': 'fixture-child' },
+              'wrappedIn': {
+                'tag_name': 'a',
+                'attributes': { 'href': 'node:url' }
+              }
             }
           );
         });
