@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-smart-append.js"></script>
+    <style type="text/css">
+      .hidden {
+        display: none;
+      }
+    </style>
+    <script type="text/javascript">
+      json_doc = {"widgets": [
+        {
+          "url": "http://fooboo.com/problem/officer?problem_id=1&officer_id=42",
+          "image": { 
+            "src": "http://fooboo.com/Sun.png",
+            "name": "sun1"
+          }
+        },
+        {
+          "url": "http://imagehosting.net/category/45/picture/986765443",
+          "image": { 
+            "src": "http://imagehosting.net/Sun.png",
+            "name": "sun2"
+          }
+        },
+        {
+          "url": "http://flickr.com/image/24843444bvf32DBEfv2Ey",
+          "image": { 
+            "src": "http://flickr.com/template.jpg",
+            "name": "sun3",
+            "width": "60px"
+          }
+        }
+      ]};
+
+      $(function() {
+        $("#trigger-btn").click(function() {
+
+          console.log("FUUUUUU! WHY ARE THEY SO DAMN STUPID!!!");
+
+          $("#list-fixture").smartAppend(
+            json_doc['widgets'], 
+            { 'value': 'node:image/src', 
+              'attributes': { 'class': 'list-item', 'id': 'node:image/name' },
+              'wrappedIn': {
+                  'tag_name': 'a', 
+                  'attributes': { 'href': 'node:url', 'class': 'incredible' }
+              },
+              'before': {
+                'tag_name': 'img', 
+                'attributes': { 
+                  'src': "http://cdn.osxdaily.com/wp-content/uploads/2012/01/apple-logo.gif", 
+                  'width': 'node:image/width', 
+                  'height': '70px' 
+                },
+                'after': "lalalasomeothertext"
+              },
+            }
+          );
+
+          return false;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="trigger-btn">Do magic!</button>
+    <div id="fixtures">
+      <ul id="list-fixture">
+        <li class="list-item">
+          <a href="#">
+            <img src="http://myimages.com/some-code-123.jpg">
+          </a>
+        </li>
+        <li class="list-item">
+          <a href="#">
+            <img src="http://myimages.com/some-code-123.jpg">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
