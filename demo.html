@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-smart-append.js"></script>
+    <script type="text/javascript" src="js/jquery-smart-append.min.js"></script>
     <style type="text/css">
       .hidden {
         display: none;
@@ -37,8 +37,6 @@
       $(function() {
         $("#trigger-btn").click(function() {
 
-          console.log("FUUUUUU! WHY ARE THEY SO DAMN STUPID!!!");
-
           $("#list-fixture").smartAppend(
             json_doc['widgets'], 
             { 'value': 'node:image/src', 
@@ -48,7 +46,7 @@
                   'attributes': { 'href': 'node:url', 'class': 'incredible' }
               },
               'before': {
-                'tag_name': 'img', 
+                'tag_name': 'img',
                 'attributes': { 
                   'src': "http://cdn.osxdaily.com/wp-content/uploads/2012/01/apple-logo.gif", 
                   'width': 'node:image/width', 
@@ -58,8 +56,6 @@
               },
             }
           );
-
-          return false;
         });
       });
     </script>
