@@ -3,7 +3,7 @@ smart_append_jquery_plugin
 
 A jQuery plugin for appending/prepending an json-array of data to lists. It'll be very usefull in case, you need to inject json data (From API's, or regular AJAX-requests) into your html document.
 
-It supports ul, ol and dl lists
+It supports ul, ol, dl lists, and div (Inner elements will be divs as well)
 
 A quick example
 --------------
