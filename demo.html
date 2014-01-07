@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery-smart-append.min.js"></script>
+    <script type="text/javascript" src="js/jquery-smart-append.js"></script>
     <style type="text/css">
       .hidden {
         display: none;
@@ -62,17 +62,17 @@
             }
           );
 
-          $("#fixtures").smartAppend(
-            json_doc['widgets'],
-            {
-              'value': 'node:image/name',
-              'attributes': { 'class': 'fixture-child' },
-              'wrappedIn': {
-                'tag_name': 'a',
-                'attributes': { 'href': 'node:url' }
-              }
-            }
-          );
+          // $("#fixtures").smartAppend(
+          //   json_doc['widgets'],
+          //   {
+          //     'value': 'node:image/name',
+          //     'attributes': { 'class': 'fixture-child' },
+          //     'wrappedIn': {
+          //       'tag_name': 'a',
+          //       'attributes': { 'href': 'node:url' }
+          //     }
+          //   }
+          // );
         });
       });
     </script>

@@ -185,7 +185,7 @@
     }
 
     tag = tagsDependencies[tag];
-
+    finalHtml = ""
     jQuery.each(elements, function(index, value) {
 
       result = initializeValue(value, params);
@@ -195,14 +195,14 @@
           main_tag_attributes[attribute] = parseValue(content, value);
         });
       }
-
-      if (action == 'append') {
-        currentList.append(tagOpener(tag, main_tag_attributes) + result + tagCloser(tag));
-      }
-      else if (action == 'prepend') {
-        currentList.prepend(tagOpener(tag, main_tag_attributes) + result + tagCloser(tag));
-      }
+      finalHtml += tagOpener(tag, main_tag_attributes) + result + tagCloser(tag);
     });
+    if (action == 'append') {
+      currentList.append(finalHtml);
+    }
+    else if (action == 'prepend') {
+      currentList.prepend(finalHtml);
+    }
   };
 
 
